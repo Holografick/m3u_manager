@@ -10,6 +10,7 @@ class Channel(models.Model):
     category = models.ForeignKey('Category', null=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=50)
     logo = models.CharField(max_length=500)
+    is_active = models.BooleanField(default=True)
 
     def __str__(self):
         return self.name
@@ -20,5 +21,5 @@ class Link(models.Model):
     url = models.CharField(max_length=500)
 
     def __str__(self):
-        return '{} | {} | {}'.format(self.channel.name, self.is_primary, self.url)
+        return self.url
 

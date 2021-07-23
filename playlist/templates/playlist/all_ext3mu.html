@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body style="word-wrap: break-word; white-space: pre-wrap;">#EXTM3U
+{% for link in links %}
+#EXTINF:-1 tvg-logo="{{ link.channel.logo }}" group-title="{{ link.channel.category }}",{{ link.channel.name }}
+{{ link.url }}
+{% endfor %}
+</body>
+</html>
